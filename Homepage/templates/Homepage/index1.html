@@ -1,0 +1,94 @@
+{% extends 'Homepage/base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<h3 class="text-center" data-scroll-reveal="enter from the top after 0.9s">Today's Special</h3>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+            <div class="text-center">
+                                <span id="day"></span>
+
+            </div>
+                
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+</div>
+<div class="container second-side">
+    <div class="row parent-row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="row">
+                {% for food in foods %}
+                <div class="col-md-6">
+                    <div class="cards" data-scroll-reveal="enter from the left after 0.7s">
+                        
+                        <div class="thumbnail">
+                            <img name="change-image" src="{{ food.image.url }}" width="100%" height="300" class="img-circle" onmouseover="changeImage">
+                        </div>
+                        <!-- end thumbnail -->
+                        <div class="price">
+                        <h6 class="text-center">{{ food.name }} at &#8358;{{ food.price}}</h6>
+                            <!-- <h6 class="text-center">Abak Mbakara soup with stockfish at &#8358;750</h6> -->
+                        </div>
+                        
+                        <!-- end price -->
+                        <div class="lista">
+                            <ul>
+                                <li>
+                                    <input class="number" type="number" name="" value="1">
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <form style="display: inline;" action="{% url 'Homepage:cart' %}" method="post">
+                                        <button class="food-btn">Add to Cart</button>
+                                        {% csrf_token %}
+                                        </form>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        <!-- end lista -->
+                    </div>
+                                        <!-- end cards -->
+                </div>
+                {% endfor %}
+
+               <!--  <div class="col-sm-6">
+                    <div class="cards" data-scroll-reveal="enter from the right after 0.7s">
+                        <!-- <div class="thumbnail">
+                            <img src="{{ food_image2 }}" width="300" height="" class="img-circle">
+                        </div> -->
+                        <!-- end thumbnail -->
+                        <!-- <div class="price"> -->
+                            <!-- <h6 class="text-center">{{ food_name2 }}at &#8358;{{ food_price2 }}</h6> -->
+                            <!-- <h6 class="text-center">Beans and Plantain with Chicken at &#8358;850</h6> -->
+                        <!-- </div> -->
+                        <!-- end price -->
+                        <!-- <div class="lista"> -->
+                            <!-- <ul> -->
+                                <!-- <li> -->
+                                    <!-- <input class="number" type="number" name="" value="1"> -->
+                                <!-- </li> -->
+                                <!-- <li> -->
+                                    <!-- <a href="#"> -->
+                                        <!-- <form style="display: inline;" action="{% url 'Homepage:cart' %}" method="post"> -->
+                                        <!-- <button class="food-btn">Add to Cart</button> -->
+                                        <!-- {% csrf_token %} -->
+                                        <!-- </form> -->
+                                    <!-- </a> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+                        </div>
+                        <!-- end lista -->
+                    </div>
+                    <!-- end cards -->
+<!--                 </div> -->
+           </div>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <!-- end row -->
+{% endblock body%}

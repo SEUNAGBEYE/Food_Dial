@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <link href="{% static 'css/bootstrap/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rochester" rel="+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Mstylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Materialaterial+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'Homepage:index' %}">FoodDial</a>
+                </div>
+                <!-- MENU LINKS -->
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right" id="navigation">
+                        <li>
+                            <a class="" href="#">
+                                <button class="btn btn-default" data-toggle="modal" href='#modal-id'>sign in</button>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="#">
+                                <button class="btn btn-default" data-toggle="modal" href='#modal-id2'>sign up</button>
+                             </a>
+                        </li>
+                         <li>
+                            <a class="text-center" href="#"  >
+                            <button class="btn btn-default" data-toggle="modal" href='#modal-id3'><i class="fa fa-shopping-cart"> cart</i>
+                            </button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+          <div class="modal fade" id="modal-id">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="post" class="form-horizontal" role="form" action="{% url 'Homepage:login' %}">
+                                <div class="form-group">
+                                <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                    <h4 class="text-center">login in with</h4>
+                                    <button class="btn btn-primary btn-facebook"><b>Facebook</b></button><br><br>
+                                    <div class="col-md-5"><hr></div>
+                                    <div class="col-md-2 text-center">Or</div>
+                                    <div class="col-md-5"><hr></div><br>
+                                    <!-- <div class="form-input"> -->
+                                   <!--      <input type="email" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Email address"><br>
+
+                                    </div>
+                                    <div class="form-input2">
+                                        <input type="email" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Password"><br>
+
+                                    </div> -->
+                                          {% csrf_token %}
+                                          {{ login_form.as_p}}
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                <span>Remember me</span><span class="pull-right"><a href="">Forgot password?</a></span>
+                                             </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-facebook background-primary">Submit</button>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+         <div class="modal fade" id="modal-id3">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Shopping cart</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <a href= "{% url 'Homepage:cart' %}"><button type="button" class="btn btn-primary">View Cart</button></a>
+                        <a href= "{% url 'Homepage:checkout' %}"><button type="button" class="btn btn-primary">Checkout</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="modal fade" id="modal-id2">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="post" class="form-horizontal" role="form" action="{% url 'Homepage:register' %}">
+                                <div class="form-group">
+                                <div class="col-md-2"></div>
+                                    <div class="col-md-8">
+                                    <h4 class="text-center">Sign Up With</h4>
+                                    <button class="btn btn-primary btn-facebook"><b>Facebook</b></button><br><br>
+                                    <div class="col-md-5"><hr></div>
+                                    <div class="col-md-2 text-center">Or</div>
+                                    <div class="col-md-5"><hr></div><br>
+                                    <!-- <div class="form-input-name"> -->
+                                        <!-- <input type="text" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Full Name"><br>
+
+                                    </div>
+                                    <div class="form-input-email">
+                                        <input type="email" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Email address"><br>
+
+                                    </div>
+                                    <div class="form-input-password">
+                                        <input type="password" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Password"><br>
+
+                                    </div>
+                                    <div class="form-input-password">
+                                        <input type="password" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Confirm Password"><br>
+
+                                    </div>
+                                    <div class="form-input-phone">
+                                        <input type="tel" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Phone"><br>
+
+                                    </div> -->
+                                    {% if reg_form %}
+                                                <form class="wow fadeInUp animated" action="{% url 'Homepage:register' %}" method="post">
+                                                {% csrf_token %}
+                                                {{ reg_form.as_p }}
+                                                <!-- <input type="submit" name="Register" value="Register"> -->
+                                                
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                <span>Remember me</span><span class="pull-right"><a href="">Forgot password?</a></span>
+                                             </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-facebook background-primary">Submit</button>
+                                    </div>
+                                </div>
+                        </form>
+                        {% endif %}
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+
+        <div id="tf-home" class="text-center google-font ">
+            <div class="overlay">
+                <div class="content" data-scroll-reveal="enter from the bottom after 2s">
+                    <div class="search-holder"></div>
+                    <h1 style = "font-family: 'Playball', cursive !important;">
+                      Welcome On <span style="color: #fcac45">Food Dial</span>   
+                    </h1>
+                    <p style="    font-family: 'Playball', cursive !important;
+" class="lead">Order food from the most reliable<strong> source and</strong> <strong>extraordinary people</strong></p>
+                    <p  class="lead">
+                        <a href="{% url 'Homepage:product' %}" style="margin-top: 50%;"><button class="btn btn-default btn-bg">Order Now</button></a>
+                    </p>
+                    
+                 </div>
+            </div>
+        </div>
+        <div class="row">
+            {% block body %}{% endblock body%}
+</div>
+<!-- end container -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="foot-info" data-scroll-reveal="enter from the top after 0.7s">
+                    <ul>
+                        <li>
+                            <a href="#">Information</a>
+                        </li>
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">My Account</a>
+                        </li>
+                        <li>
+                            <a href="#">Order History</a>
+                        </li>
+                        <li>
+                            <a href="#">Delivery Information</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms &Condition</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end foot-info -->
+            </div>
+            <div class="col-md-3">
+                <div class="foot-info" data-scroll-reveal="enter from the top after 0.8s">
+                    <ul>
+                        <li>
+                            <a href="#">Customer Service</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">+2348038750836</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end foot-info -->
+            </div>
+            <div class="col-md-3">
+                <div class="social-icons">
+                    <ul>
+                        <li>
+                            <button class="facebook" data-scroll-reveal="enter from the top after 0.7s">
+                                <a href="#">
+                                    <i class="fa fa-facebook" style="color: #fff;"></i>
+                                </a>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="twitter" data-scroll-reveal="enter from the bottom after 0.7s">
+                                <a href="#">
+                                    <i class="fa fa-twitter" style="color: #fff;"></i>
+                                </a>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="google" data-scroll-reveal="enter from the left after 0.7s">
+                                <a href="#">
+                                    <i class="fa fa-google-plus" style="color: #fff;"></i>
+                                </a>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end social-icons -->
+            </div>
+            <div class="col-md-3" data-scroll-reveal="enter from the bottom after 0.7s">
+                <h3 class="hhhhh">Get the app on</h3>
+                <img src="{% static 'images/appstore.jpg' %}" alt="sss" width="100">
+                <img src="{% static 'images/play.png' %}" alt="sss" width="100">
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end footer -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--  Scrolling Reveal Script -->
+<script src="{% static 'js/scrollReveal.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script type="text/javascript">
+    var _className = function(element) {
+    return document.getElementsByClassName(element);
+}
+ 
+ 
+function getDay() {
+    var date = new Date();
+var days = date.getDay();
+var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    var n = weekday[date.getDay()];
+var day = document.getElementById("day").innerHTML = n;
+console.log(Date());
+}
+getDay()
+/*
+SHOPPING CART
+*/
+  
+</script>
+</body></html>
+<!-- end container -->
+<script src="{% static 'scripts/scripts.js' %}" type="text/javascript"></script>
+</body></html>

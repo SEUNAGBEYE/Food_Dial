@@ -1,0 +1,38 @@
+ .nav-top {
+  margin-top: 300px;
+ }
+ .login {
+  float: left!important;
+  padding-top: 20px;
+  padding-left: 30px;
+  font-size: 18px;
+}
+.facebook-login {
+  display: block;
+}
+form.form-control {
+  margin-top: 70px;
+}
+form.form-control .facebook-login{
+  background-color: #3B5998;
+  color: #fff;
+  width: 300px;
+  font-family: 'Lato', sans-serif;
+  height: 45px;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+.pad {
+  margin-top: 20px;
+}
+.span {
+  margin-t: 13px;
+  /* margin-top: -230px; */
+  margin-left: -125px;
+}
+.submit {
+  margin-top: 55px;
+ }
+.submit {
+  margin-top: 75px;
+ }

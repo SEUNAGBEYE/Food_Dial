@@ -25,7 +25,7 @@ SECRET_KEY = '9u5_upvq!8#9i&fqmbp+1j88e6-somwkjp8+wuq+1j^*27q9fz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '10.100.200.122', ]
 
 
 # Application definition
@@ -68,6 +68,17 @@ TEMPLATES = [
         },
     },
 ]
+
+# # CACHES = {
+# #     'default': {
+# #         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+# #         'LOCATION': [
+# #                         '127.0.0.1:8000',
+# #                         '127.0.0.1:9000',
+# #                     ]
+
+# #     }
+# }
 
 WSGI_APPLICATION = 'Food_Dial.wsgi.application'
 

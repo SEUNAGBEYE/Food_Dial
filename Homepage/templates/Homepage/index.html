@@ -68,14 +68,7 @@
                                     <div class="col-md-5"><hr></div>
                                     <div class="col-md-2 text-center">Or</div>
                                     <div class="col-md-5"><hr></div><br>
-                                    <!-- <div class="form-input"> -->
-                                   <!--      <input type="email" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Email address"><br>
 
-                                    </div>
-                                    <div class="form-input2">
-                                        <input type="email" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Password"><br>
-
-                                    </div> -->
                                           {% csrf_token %}
                                           {{ login_form.as_p}}
                                         <div class="checkbox">
@@ -104,8 +97,7 @@
                         
                     </div>
                     <div class="modal-footer">
-                        <a href= "{% url 'Homepage:cart' %}"><button type="button" class="btn btn-primary">View Cart</button></a>
-                        <a href= "{% url 'Homepage:checkout' %}"><button type="button" class="btn btn-primary">Checkout</button></a>
+                        <!--  -->
                     </div>
                 </div>
             </div>
@@ -127,26 +119,7 @@
                                     <div class="col-md-5"><hr></div>
                                     <div class="col-md-2 text-center">Or</div>
                                     <div class="col-md-5"><hr></div><br>
-                                    <!-- <div class="form-input-name"> -->
-                                        <!-- <input type="text" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Full Name"><br>
-
-                                    </div>
-                                    <div class="form-input-email">
-                                        <input type="email" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Email address"><br>
-
-                                    </div>
-                                    <div class="form-input-password">
-                                        <input type="password" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Password"><br>
-
-                                    </div>
-                                    <div class="form-input-password">
-                                        <input type="password" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Confirm Password"><br>
-
-                                    </div>
-                                    <div class="form-input-phone">
-                                        <input type="tel" name="" id="input" class="form-control form-height" value="" required="required" title="" placeholder="Phone"><br>
-
-                                    </div> -->
+                                    
                                     {% if reg_form %}
                                                 <form class="wow fadeInUp animated" action="{% url 'Homepage:register' %}" method="post">
                                                 {% csrf_token %}
@@ -180,7 +153,7 @@
                     <p style="    font-family: 'Playball', cursive !important;
 " class="lead">Order food from the most reliable<strong> source and</strong> <strong>extraordinary people</strong></p>
                     <p  class="lead">
-                        <a href="{% url 'Homepage:product' %}" style="margin-top: 50%;"><button class="btn btn-default btn-bg">Order Now</button></a>
+                        <a href="{% url ' style="margin-top: 50%;"><button class="btn btn-default btn-bg">Order Now</button></a>
                     </p>
                     
                  </div>

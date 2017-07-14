@@ -9,7 +9,6 @@ from Homepage.forms import RegistrationForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.urlresolvers import reverse
-import datetime
 
 # from Homepage.cart import Cart
 from django.contrib.auth import authenticate, login , logout
@@ -22,7 +21,7 @@ from Homepage.models import UserAccount, Product, Orders
 # Create your views here.
 
 def index(request):
-	print datetime()
+
 	context = {}
 	reg_form = RegistrationForm()
 	login_form = LoginForm()

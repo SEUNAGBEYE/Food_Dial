@@ -1,0 +1,124 @@
+.nav-margin {
+	margin-top: 200px!important;
+}
+table {
+	border:1px solid lightgrey;
+ }
+th {
+	border-left: 1px solid lightgrey!important;
+	text-align: center!important;
+}
+td {
+	border: 1px solid lightgrey;
+	text-align: center;
+}
+.btn_pink {
+	background: #9c27b0;
+	color: #fff;
+	border-color: none;
+	border-radius: none;
+	margin-top: 75px;
+}
+.btn_pink:hover {
+	background: #9c27b0;
+}
+.btn_grey {
+	background-color: lightgrey;
+	margin-top: 73px;
+	float: right;		
+}
+.profile span {
+	font-size: 24px;
+	line-height: 32px;
+}
+.profile .row div {
+	border-bottom: 1px solid lightgrey;	
+}
+.profile button {
+	background-color: #fff;
+	border: 1px solid lightgrey;
+}
+.remove-border {
+	border:none;
+}
+.nav-margin1 {
+	margin-top: 100px!important;
+}
+.checkout {
+	background-color: #333;
+	color: #fff;
+	height: 70px;
+	width: 100%;
+	border-radius: 15px;
+	/* align-items: center; */
+	/* justify-content: center; */
+	/* align-content: center; */
+	}
+ .checkout h4 {
+ 	/* padding-top: 20px; */
+ 	padding-left: 20px;
+ 	/* display: inline; */
+ }
+ .checkout button {
+ 	-
+ 	right: 20px!important;
+ 	margin-top: 15px!important;
+ }
+ .form-control-fname {
+ 	    display: inline;
+     height: 34px;
+    width: 160px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+ }
+ .form-control-lname {
+ 	 display: inline;
+     height: 34px;
+     width: 160px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+ }
+  .form-control-email {
+ 	 display: inline;
+ 	 height: 34px;
+ 	 width: 323px;
+ 	 margin-top: 10px;
+ 	 padding: 6px 12px;
+ 	 font-size: 14px;
+ 	 line-height: 1.42857143;
+ 	 color: #555;
+ 	 background-color: #fff;
+ 	 background-image: none;
+ 	 border: 1px solid #ccc;
+ 	 border-radius: 4px;
+ }
+ .form-control-select {
+ 	 display: inline;
+ 	 height: 34px;
+ 	 width: 160px;
+ 	 margin-top: 10px;
+ 	 padding: 6px 12px;
+ 	 font-size: 14px;
+ 	 line-height: 1.42857143;
+ 	 color: #555;
+ 	 background-color: #fff;
+ 	 background-image: none;
+ 	 border: 1px solid #ccc;
+ 	 border-radius: 4px;
+ }
+ .no-border {
+ 	border: none!important;
+ 	border-bottom: 1px solid lightgrey!important;
+ }

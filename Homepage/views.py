@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from datetime import date
-
+import time
 from django.shortcuts import render, redirect
 from django.conf.urls import url
 from django.http import HttpResponse
@@ -29,7 +29,13 @@ def index(request):
 	context['login_form'] = login_form
 	foodToPurchase = Product.objects.filter(is_available = True)
 	foods = foodToPurchase
+	timer1 = time.localtime()
+	timer = timer1[3]+1 >= 9
+	# print timer1[3]
+
 	context['foods'] = foods
+	# else:
+	context['timer'] = timer
 
 	
 	return render(request, 'Homepage/index1.html', context)

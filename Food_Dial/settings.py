@@ -25,7 +25,7 @@ SECRET_KEY = '9u5_upvq!8#9i&fqmbp+1j88e6-somwkjp8+wuq+1j^*27q9fz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['switchfood.herokuapp.com']
+ALLOWED_HOSTS = ['switchfood.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

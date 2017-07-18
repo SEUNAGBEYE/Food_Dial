@@ -38,10 +38,16 @@
                                 
                                 <li>
                                         {% if request.user.is_authenticated %}
-                                        <form style="display: inline;" action="{% url 'Homepage:order' food.id  %}" method="post">
-                                        <button type="submit" class="btn btn-warning btn-lg">Choose</button>
-                                        {% csrf_token %}
-                                        </form>
+                                            {% if timer %}
+                                                <p><strong>Sorry its past time be early nextime</strong></p>
+                                            {% else %}
+                                                <form style="display: inline;" action="{% url 'Homepage:order' food.id  %}" method="post">
+                                            
+                                                    <button type="submit" class="btn btn-warning btn-lg">Choose</button>
+                                                    {% csrf_token %}
+                                                </form>
+                                            {% endif %}
+
                                         {% else %}
                                             <p><strong>Please Sign in or Sign Up to Choose</strong></p>
                                         {% endif %}

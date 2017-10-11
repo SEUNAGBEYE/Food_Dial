@@ -17,7 +17,7 @@ from django.contrib.auth import authenticate, login , logout
 from Homepage.models import UserAccount, Product, Orders
 
 
-import numpy as np
+# import numpy as np
 import cv2
 # cap = cv2.VideoCapture('001-how-the-course-is-structured.mp4') Used for playing video
 # cap = cv2.VideoCapture(0 + cv::CAP_FFMPEG)

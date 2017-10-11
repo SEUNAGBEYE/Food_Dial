@@ -17,6 +17,29 @@ from django.contrib.auth import authenticate, login , logout
 from Homepage.models import UserAccount, Product, Orders
 
 
+import numpy as np
+import cv2
+# cap = cv2.VideoCapture('001-how-the-course-is-structured.mp4') Used for playing video
+# cap = cv2.VideoCapture(0 + cv::CAP_FFMPEG)
+
+def start_video_call(request):
+	cap = cv2.VideoCapture(0)
+	while(True):
+	    # Capture frame-by-frame
+	    ret, frame = cap.read()
+	    # ret = cap.set(cv2.CAP_PROP_FRAME_WIDTH,500) 
+	    # ret = cap.set(cv2.CAP_PROP_FRAME_HEIGHT,500)
+	    # Our operations on the frame come here
+	    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+	    # Display the resulting frame
+	    cv2.imshow('frame',gray)
+	    if cv2.waitKey(1) & 0xFF == ord('q'):
+	        break
+	# When everything done, release the capture
+	cap.release()
+	cv2.destroyAllWindows()
+	return index(request)
+
 
 # Create your views here.
 
@@ -51,7 +74,7 @@ def registrationView(request):
 	context['reg_form'] = reg_form
 
 	if request.method == 'POST':
-		print 'hello post'
+		# print 'hello post'
 		user_reg_form = RegistrationForm(data = request.POST)
 
 		rp = request.POST
@@ -72,7 +95,7 @@ def registrationView(request):
 				user = User.objects.create(username = rp['username'], first_name = rp['first_name'], last_name = rp['last_name'], email = rp['email'])
 				user.set_password(rp['password'])
 				user.save()
-				print user
+				# print user
 
 				#create a useraccount for the newly created user
 				useraccount = UserAccount.objects.create(user = user)
@@ -82,12 +105,12 @@ def registrationView(request):
 					# sender = ['agbeyeseun1@gmail.com']
 					# send_mail('Hi your account has been succesfully created', 'your account has been succesfully created',sender, recipent )
 					messages.success(request, 'our account details have been saved')
-					print 'new user created %s' %(user.username)
+					print('new user created %s' %(user.username))
 					return redirect(reverse('Homepage:index'))
 				else:
 					messages.warning(request, 'Sorry something went wrong while savings your records, please try again.')
 			else:
-				print 'form is not valid'
+				# print 'form is not valid'
 				# print request.POST
 				# print user_mgr
 				context['reg_form'] = RegistrationForm(data = request.POST)
@@ -148,7 +171,7 @@ def orderView(request, food_id):
 			order.user = order.user + ',' + ' ' + request.user.username
 			order.quantity += 1
 			# useraccount.order = order
-			print useraccount.order
+			# print useraccount.order
 			order.save()
 
 			return redirect(reverse('Homepage:index'))
@@ -165,11 +188,11 @@ def orderView(request, food_id):
 				useraccount.order = order
 				useraccount.save()
 			
-				print messages.info(request, 'you have choosen ')
+				# print messages.info(request, 'you have choosen ')
 				# print 'hi'
 				return redirect(reverse('Homepage:index'))
 			else:
-				print messages.info(request, 'you have choosen and cannot choose again')
-				print 'hi you choose'
+				# print messages.info(request, 'you have choosen and cannot choose again')
+				# print 'hi you choose'
 				return redirect(reverse('Homepage:index'))
 	return redirect(reverse('Homepage:index'))

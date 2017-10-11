@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
-from model_field_choices import STATUS, GENDER, WEEKDAY
+from Homepage.model_field_choices import STATUS, GENDER, WEEKDAY
 
 
 

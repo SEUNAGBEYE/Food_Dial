@@ -31,6 +31,12 @@
                 <!-- MENU LINKS -->
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right" id="navigation">
+                        <li>
+
+                            <a href="{% url 'Homepage:video_call' %}">
+                                <button class="btn btn-default">Video Call</button>
+                             </a>
+                        </li>
                     {% if user.is_authenticated %}
                         <li>
                             <a href="{% url 'Homepage:logout' %}">
